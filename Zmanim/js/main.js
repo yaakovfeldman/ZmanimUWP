@@ -12,7 +12,7 @@
 	    var hebDate = new Hebcal.HDate();
 	    dateDisplay.innerText = hebDate.toString();
 	    var zmanim = hebDate.getZemanim();
-	    chatzotDisplay.innerText = "Chatzot: " + zmanim.chatzot;
+	    chatzotDisplay.innerText = "Chatzot: " + zmanim.chatzot.getHours() + ":" + zmanim.chatzot.getMinutes();
 
 		if (args.detail.kind === activation.ActivationKind.voiceCommand) {
 			// TODO: Handle relevant ActivationKinds. For example, if your app can be started by voice commands,
