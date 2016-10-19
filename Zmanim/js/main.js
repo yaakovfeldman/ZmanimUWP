@@ -7,7 +7,7 @@
 	var app = WinJS.Application;
 	var activation = Windows.ApplicationModel.Activation;
 	var isFirstActivation = true;
-    
+   
 	app.onactivated = function (args) {
 	    var hebDate = new Hebcal.HDate();
 	    dateDisplay.innerText = hebDate.toString();
@@ -64,3 +64,9 @@
 	app.start();
 
 })();
+
+
+WinJS.UI.processAll().done(function () {
+    var splitView = document.querySelector(".splitView").winControl;
+    new WinJS.UI._WinKeyboard(splitView.paneElement); // Temporary workaround: Draw keyboard focus visuals on NavBarCommands
+});
