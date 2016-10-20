@@ -9,6 +9,56 @@
 	var isFirstActivation = true;
    
 	app.onactivated = function (args) {
+        
+WinJS.Namespace.define("Sample", {
+    mode: {
+        small: {
+            name: 'small',
+            openedDisplayMode: WinJS.UI.SplitView.OpenedDisplayMode.overlay,
+            closedDisplayMode: WinJS.UI.SplitView.ClosedDisplayMode.none,
+        },
+        medium: {
+            name: 'medium',
+            openedDisplayMode: WinJS.UI.SplitView.OpenedDisplayMode.overlay,
+            closedDisplayMode: WinJS.UI.SplitView.ClosedDisplayMode.inline,
+        },
+        large: {
+            name: 'large',
+            openedDisplayMode: WinJS.UI.SplitView.OpenedDisplayMode.inline,
+            closedDisplayMode: WinJS.UI.SplitView.ClosedDisplayMode.inline,
+        }
+    },
+    splitView: null,
+    radioChanged: WinJS.UI.eventHandler(function (ev) {
+        var mode = event.target.value;
+        Sample.updateSplitView(mode);
+    }),
+    updateSplitView: function (size) {
+        // Remove all the size classes
+        Object.keys(Sample.mode).forEach(function (key) {
+            WinJS.Utilities.removeClass(Sample.host, Sample.mode[key].name);
+        });
+
+        // Update the SplitView based on the size
+        Sample.splitView.openedDisplayMode = Sample.mode[size].openedDisplayMode;
+        Sample.splitView.closedDisplayMode = Sample.mode[size].closedDisplayMode;
+
+        // Add the size class
+        WinJS.Utilities.addClass(Sample.host, size);
+    }
+});
+
+WinJS.Binding.processAll(null, Sample).then(function () {
+    WinJS.UI.processAll().done(function () {
+        Sample.splitView = document.querySelector(".splitView").winControl;
+        Sample.host = document.querySelector("#app");
+
+        // Temporary workaround: Draw keyboard focus visuals on NavBarCommands
+        new WinJS.UI._WinKeyboard(Sample.splitView.paneElement);
+    });
+})
+
+
 	    var hebDate = new Hebcal.HDate();
 	    dateDisplay.innerText = hebDate.toString();
 	    var zmanim = hebDate.getZemanim();
@@ -78,7 +128,22 @@
 })();
 
 
-WinJS.UI.processAll().done(function () {
-    var splitView = document.querySelector(".splitView").winControl;
-    new WinJS.UI._WinKeyboard(splitView.paneElement); // Temporary workaround: Draw keyboard focus visuals on NavBarCommands
-});
+window.addEventListener("resize", onResize);
+
+
+function onResize(eventArgs) {
+    var appWidth = eventArgs.view.outerWidth;
+    var appHeight = eventArgs.view.outerHeight;
+    // Update view for the new window size 
+    updateView(appWidth);
+}
+
+function updateView(appWidth) {
+    if (appWidth < 900) {
+        Sample.splitView.openedDisplayMode = Sample.mode['small'].openedDisplayMode;
+        Sample.splitView.closedDisplayMode = Sample.mode['small'].closedDisplayMode;
+    } else {
+        Sample.splitView.openedDisplayMode = Sample.mode['medium'].openedDisplayMode;
+        Sample.splitView.closedDisplayMode = Sample.mode['medium'].closedDisplayMode;
+    }
+}

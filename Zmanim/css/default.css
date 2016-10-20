@@ -1,10 +1,8 @@
 ﻿body {
 }
-.content,
-#app {
-    height: 100%;
+.content, #app {
+    height: calc(100% - 72px);
 }
-
     #app .win-splitviewpanetoggle {
         float: left;
     }
@@ -37,13 +35,33 @@
     visibility: hidden;
 }
 
+/*SplitView pane style for different screen sizes*/
+#app.large .splitView {
+    width: 100%;
+}
+
+#app.large .win-splitview-content .win-splitviewpanetoggle {
+    display: none;
+}
+
+#app.medium .splitView {
+    width: 80%
+}
+
+#app.medium .win-splitview-content .win-splitviewpanetoggle {
+    display: none;
+}
+
+#app.small .splitView {
+    width: 60%;
+}
+
 /*SplitView content style*/
 #app .win-splitview-content {
-    background-color: rgb(182,182,182);
+    background-color: rgb(112,112,112);
 }
 
 #app .contenttext {
     margin-left: 20px;
     margin-top: 6px;
 }
-
