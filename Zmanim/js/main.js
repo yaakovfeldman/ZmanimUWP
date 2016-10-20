@@ -14,6 +14,17 @@
 	    var zmanim = hebDate.getZemanim();
 	    chatzotDisplay.innerText = "Chatzot: " + zmanim.chatzot.getHours() + ":" + zmanim.chatzot.getMinutes();
 
+                $(document).ready(function () {
+
+            // page is now ready, initialize the calendar...
+
+
+            $('#calendar').fullCalendar({
+                // put your options and callbacks here
+            })
+
+        });
+
 		if (args.detail.kind === activation.ActivationKind.voiceCommand) {
 			// TODO: Handle relevant ActivationKinds. For example, if your app can be started by voice commands,
 			// this is a good place to decide whether to populate an input field or choose a different initial view.

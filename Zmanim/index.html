@@ -9,34 +9,39 @@
     <script src="lib/winjs-4.4.0/js/ui.js"></script>
     <link href="css/default.css" rel="stylesheet"/>
     <script src="js/main.js"></script>
+    <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
+    <script src='lib/jquery.min.js'></script>
+    <script src='lib/moment.min.js'></script>
+    <script src='fullcalendar/fullcalendar.js'></script>
 </head>
 <body class="win-type-body">
-    <div id="app">
-        <div class="splitView" data-win-control="WinJS.UI.SplitView">
-            <!-- Pane area -->
-            <div>
-                <div class="header">
-                    <button class="win-splitviewpanetoggle"
-                            data-win-control="WinJS.UI.SplitViewPaneToggle"
-                            data-win-options="{ splitView: select('.splitView') }"></button>
-                    <div class="title">Options</div>
-                </div>
-
-                <div class="nav-commands">
-                    <div data-win-control="WinJS.UI.SplitViewCommand" data-win-options="{ label: 'Home', icon: 'home'}"></div>
-                    <div data-win-control="WinJS.UI.SplitViewCommand" data-win-options="{ label: 'Favorite', icon: 'favorite'}"></div>
-                    <div data-win-control="WinJS.UI.SplitViewCommand" data-win-options="{ label: 'Settings', icon: 'settings'}"></div>
-                    <div data-win-control="WinJS.UI.SplitViewCommand" data-win-options="{ label: 'Calendar', icon: 'calendar'}"></div>
-                </div>
+<div id="app">
+    <div class="splitView" data-win-control="WinJS.UI.SplitView">
+        <!-- Pane area -->
+        <div>
+            <div class="header">
+                <button class="win-splitviewpanetoggle"
+                        data-win-control="WinJS.UI.SplitViewPaneToggle"
+                        data-win-options="{ splitView: select('.splitView') }"></button>
+                <div class="title">Options</div>
             </div>
 
-            <!-- Content area -->
-            <div class="contenttext">
-                <h2 class="win-h2">Zmanin from Yaakov (and hebcal!)</h2>
-                <h1 id="dateDisplay">Date</h1>
-                <h2 id="chatzotDisplay">Date</h2>
+            <div class="nav-commands">
+                <div data-win-control="WinJS.UI.SplitViewCommand" data-win-options="{ label: 'Home', icon: 'home'}"></div>
+                <div data-win-control="WinJS.UI.SplitViewCommand" data-win-options="{ label: 'Favorite', icon: 'favorite'}"></div>
+                <div data-win-control="WinJS.UI.SplitViewCommand" data-win-options="{ label: 'Settings', icon: 'settings'}"></div>
+                <div data-win-control="WinJS.UI.SplitViewCommand" data-win-options="{ label: 'Calendar', icon: 'calendar'}"></div>
             </div>
         </div>
+
+        <!-- Content area -->
+        <div class="contenttext">
+            <h2 class="win-h2">Zmanin from Yaakov (and hebcal!)</h2>
+            <h1 id="dateDisplay">Date</h1>
+            <h2 id="chatzotDisplay">Date</h2>
+            <div id='calendar'></div>
+        </div>
     </div>
+</div>
 </body>
 </html>
