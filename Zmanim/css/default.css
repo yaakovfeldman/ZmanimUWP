@@ -45,7 +45,7 @@
 }
 
 #app.medium .splitView {
-    width: 80%
+    width: 100%
 }
 
 #app.medium .win-splitview-content .win-splitviewpanetoggle {
@@ -53,12 +53,12 @@
 }
 
 #app.small .splitView {
-    width: 60%;
+    width: 100%;
 }
 
 /*SplitView content style*/
 #app .win-splitview-content {
-    background-color: rgb(112,112,112);
+    background-color: rgb(192,192,192);
 }
 
 #app .contenttext {

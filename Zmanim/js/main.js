@@ -64,6 +64,9 @@ WinJS.Binding.processAll(null, Sample).then(function () {
 	    var zmanim = hebDate.getZemanim();
 	    chatzotDisplay.innerText = "Chatzot: " + zmanim.chatzot.getHours() + ":" + zmanim.chatzot.getMinutes();
 
+	    Sample.updateSplitView('small');
+
+
                 $(document).ready(function () {
 
             // page is now ready, initialize the calendar...
@@ -140,10 +143,12 @@ function onResize(eventArgs) {
 
 function updateView(appWidth) {
     if (appWidth < 900) {
-        Sample.splitView.openedDisplayMode = Sample.mode['small'].openedDisplayMode;
-        Sample.splitView.closedDisplayMode = Sample.mode['small'].closedDisplayMode;
+        //Sample.splitView.openedDisplayMode = Sample.mode['small'].openedDisplayMode;
+        //Sample.splitView.closedDisplayMode = Sample.mode['small'].closedDisplayMode;
+        Sample.updateSplitView('small');
     } else {
-        Sample.splitView.openedDisplayMode = Sample.mode['medium'].openedDisplayMode;
-        Sample.splitView.closedDisplayMode = Sample.mode['medium'].closedDisplayMode;
+        //Sample.splitView.openedDisplayMode = Sample.mode['medium'].openedDisplayMode;
+        //Sample.splitView.closedDisplayMode = Sample.mode['medium'].closedDisplayMode;
+        Sample.updateSplitView('medium');
     }
 }
