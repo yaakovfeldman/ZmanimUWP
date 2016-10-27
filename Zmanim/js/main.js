@@ -64,6 +64,11 @@ WinJS.Binding.processAll(null, Sample).then(function () {
 	    var zmanim = hebDate.getZemanim();
 	    chatzotDisplay.innerText = "Chatzot: " + zmanim.chatzot.getHours() + ":" + zmanim.chatzot.getMinutes();
 
+        var zman
+        for (zman in zmanim) {
+            zmanimDisplay.innerHTML += "<br>" + zman + zmanim[zman].getHours() + ":" + zmanim[zman].getMinutes();
+        }
+
 	    Sample.updateSplitView('small');
 
 

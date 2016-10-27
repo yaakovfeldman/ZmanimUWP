@@ -197,6 +197,8 @@
     <Content Include="lib\winjs-4.4.0\License.txt" />
     <Content Include="lib\winjs-4.4.0\package.json" />
     <Content Include="lib\winjs-4.4.0\README.md" />
+    <Content Include="pages\home.html" />
+    <Content Include="pages\calendar.html" />
     <None Include="Zmanim_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
