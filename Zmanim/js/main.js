@@ -72,17 +72,7 @@ WinJS.Binding.processAll(null, Sample).then(function () {
 	    Sample.updateSplitView('small');
 
 
-                $(document).ready(function () {
 
-            // page is now ready, initialize the calendar...
-
-
-            $('#calendar').fullCalendar({
-                // put your options and callbacks here
-                height: "auto"
-            })
-
-        });
 
 		if (args.detail.kind === activation.ActivationKind.voiceCommand) {
 			// TODO: Handle relevant ActivationKinds. For example, if your app can be started by voice commands,

@@ -155,6 +155,7 @@
     <Content Include="js\hebcal.min.js" />
     <Content Include="js\main.js" />
     <Content Include="css\default.css" />
+    <Content Include="js\calendar.js" />
     <Content Include="lib\base.js" />
     <Content Include="lib\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
     <Content Include="lib\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
