@@ -8,6 +8,7 @@
     <script src="lib/winjs-4.4.0/js/base.js"></script>
     <script src="lib/winjs-4.4.0/js/ui.js"></script>
     <link href="css/default.css" rel="stylesheet"/>
+    <script src="js/navigator.js"></script>
     <script src="js/main.js"></script>
 </head>
 <body class="win-type-body">
@@ -44,11 +45,12 @@
         <div class="contenttext">
             <h2 class="win-h2">Zmanin from Yaakov (and hebcal!)</h2>
         </div>
-        
-        <h1 id="dateDisplay">Date</h1>
-        <h2 id="chatzotDisplay">Date</h2>
-        <div id="zmanimDisplay"></div>
-        
+
+        <div id="contenthost"
+             data-win-control="Application.PageControlNavigator"
+             data-win-options="{home: '/pages/home.html'}"></div>
+
+
     </div>
 </div>
 </body>
