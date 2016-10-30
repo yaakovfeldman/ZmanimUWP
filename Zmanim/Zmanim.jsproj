@@ -160,6 +160,7 @@
     <Content Include="js\home.js" />
     <Content Include="js\navigator.js" />
     <Content Include="js\keys.js" />
+    <Content Include="js\settings.js" />
     <Content Include="lib\base.js" />
     <Content Include="lib\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
     <Content Include="lib\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
@@ -204,6 +205,7 @@
     <Content Include="lib\winjs-4.4.0\README.md" />
     <Content Include="pages\home.html" />
     <Content Include="pages\calendar.html" />
+    <Content Include="pages\settings.html" />
     <None Include="Zmanim_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

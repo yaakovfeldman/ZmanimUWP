@@ -141,10 +141,19 @@ WinJS.Navigation.navigate("/pages/home.html");
 		// If you need to complete an asynchronous operation before your application is suspended, call args.setPromise().
 	};
 
+
+
+
 	app.start();
 
 })();
 
+var storage = Windows.Storage;
+var settings = storage.ApplicationData.current.roamingSettings;
+
+if (!("grama" in settings.values)) {
+    settings.values["grama"] = "gra";
+}
 
 window.addEventListener("resize", onResize);
 
@@ -177,10 +186,15 @@ function navigateHome(eventArgs) {
     WinJS.Navigation.navigate("/pages/home.html");
     Sample.splitView.closePane();
 }
+function navigateSettings(eventArgs) {
+    WinJS.Navigation.navigate("/pages/settings.html");
+    Sample.splitView.closePane();
+}
 
 function navEvents(eventInfo) {
     navCommandCalendar.addEventListener("invoked", navigateCalendar);
     navCommandHome.addEventListener("invoked", navigateHome);
+    navCommandSettings.addEventListener("invoked", navigateSettings);
 }
 
 document.addEventListener('DOMContentLoaded', navEvents);
