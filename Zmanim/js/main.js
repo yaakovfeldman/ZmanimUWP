@@ -1,6 +1,30 @@
 ﻿// For an introduction to the Blank template, see the following documentation:
 // http://go.microsoft.com/fwlink/?LinkId=232509
 
+
+
+(function () {
+    "use strict";
+
+    WinJS.UI.Pages.define("/pages/home/home.html", {
+        // This function is called whenever a user navigates to this page. It
+        // populates the page elements with the app's data.
+        ready: function (element, options) {
+            WinJS.Utilities.query("a").listen("click", linkClickEventHandler, false);
+
+        }
+    });
+
+    function linkClickEventHandler(eventInfo) {
+        eventInfo.preventDefault();
+        var link = eventInfo.target;
+        WinJS.Navigation.navigate(link.href);
+    }
+
+
+})();
+
+
 (function () {
 	"use strict";
 
@@ -61,9 +85,12 @@ WinJS.Binding.processAll(null, Sample).then(function () {
 
 
 
+
 Sample.updateSplitView('small');
 
 WinJS.Navigation.navigate("/pages/home.html");
+
+
 
 
 
@@ -141,3 +168,15 @@ function updateView(appWidth) {
         Sample.updateSplitView('medium');
     }
 }
+
+
+function navigateCalendar(eventArgs) {
+    WinJS.Navigation.navigate("/pages/calendar.html");
+    Sample.splitView.closePane();
+}
+
+function navEvents(eventInfo) {
+    navCommandCalendar.addEventListener("invoked", navigateCalendar);
+}
+
+document.addEventListener('DOMContentLoaded', navEvents);
