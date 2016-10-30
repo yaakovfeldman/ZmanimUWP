@@ -174,9 +174,14 @@ function navigateCalendar(eventArgs) {
     WinJS.Navigation.navigate("/pages/calendar.html");
     Sample.splitView.closePane();
 }
+function navigateHome(eventArgs) {
+    WinJS.Navigation.navigate("/pages/home.html");
+    Sample.splitView.closePane();
+}
 
 function navEvents(eventInfo) {
     navCommandCalendar.addEventListener("invoked", navigateCalendar);
+    navCommandHome.addEventListener("invoked", navigateHome);
 }
 
 document.addEventListener('DOMContentLoaded', navEvents);
