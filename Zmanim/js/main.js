@@ -2,7 +2,6 @@
 // http://go.microsoft.com/fwlink/?LinkId=232509
 
 
-
 (function () {
     "use strict";
 

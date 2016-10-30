@@ -209,6 +209,9 @@
   <ItemGroup>
     <Folder Include="fullcalendar\lib\" />
   </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Bing.Maps.JavaScript, Version=1.313.0825.1" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
   <!-- To modify your build process, add your task inside one of the targets below then uncomment
        that target and the DisableFastUpToDateCheck PropertyGroup. 
